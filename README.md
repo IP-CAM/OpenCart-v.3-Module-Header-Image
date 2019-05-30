@@ -15,7 +15,7 @@ I added in: admin/view/template/extension/module/starter_module.twig
 		<a href="" id="thumb-headbg" data-toggle="image" class="img-thumbnail">
 		<img src="{{ headbg }}" alt="" title="" data-placeholder="{{ placeholder }}" />
 		</a>
-		<input type="hidden" name="headbg" value="{{ config_headbg }}" id="input-headbg" />
+		<input type="hidden" name="config_headbg" value="{{ config_headbg }}" id="input-headbg" />
 	</div>
 </div>
 
