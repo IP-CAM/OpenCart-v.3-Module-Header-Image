@@ -38,9 +38,9 @@ In the body section add this
 // Module Image
 
 if (isset($this->request->post['config_headbg'])) {
-	$data['headbg'] = $this->request->post['config_headbg'];
+	$data['config_headbg'] = $this->request->post['config_headbg'];
 } else {
-	$data['headbg'] = $this->config->get('config_headbg');
+	$data['config_headbg'] = $this->config->get('config_headbg');
 }
 $this->load->model('tool/image');
 
