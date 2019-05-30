@@ -1,12 +1,6 @@
-I would like to add an Image as background by selecting from a module. The new extension is created under starter_module name.
-
-The image set in module is not saving, this would be the issue, if you know the solution, please add in your comment.
-
-Many thanks,
-
+To add an Image as background by selecting from a module. The new extension is created under starter_module name.
 
 I added in: admin/view/template/extension/module/starter_module.twig
-
 
 ```
 <div class="form-group">
@@ -23,11 +17,24 @@ I added in: admin/view/template/extension/module/starter_module.twig
 
 In admin/controller/extension/module/starter_module.php
 
+Before this code: (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
 ```
 //Top page
-// Module Image
-$this->model_setting_setting->editSetting('config_headbg', $this->request->post);
-// Module Image
+$this->load->model('tool/image');
+$data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+
+```
+
+After this code: (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
+```
+   	$this->model_setting_setting->editSetting('config_headbg', $this->request->post);
+
+```
+In the body section add this
+
+```
 // Module Image
 
 if (isset($this->request->post['config_headbg'])) {
@@ -68,7 +75,3 @@ In catalog/view/theme/default/template/common/header.twig
 {{ headbg }}
 
 ```
-
-
-
-Many thanks,
