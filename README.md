@@ -1,5 +1,4 @@
 To add an Image as background by selecting from a module. The new extension is created under starter_module name.
-
 I added in: admin/view/template/extension/module/starter_module.twig
 
 ```
